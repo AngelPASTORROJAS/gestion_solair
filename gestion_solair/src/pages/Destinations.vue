@@ -2,7 +2,7 @@
   <q-page class="q-pa-lg">
     <div class="row justify-between q-mb-lg">
       <p class="sub-title">Destinations</p>
-      <q-btn class="bouton-default" label="Créer" :to="{ name: 'destination-create' }"></q-btn>
+      <q-btn class="bouton-default" :to="{ name: 'destination-create' }">Créer</q-btn>
     </div>
     <q-table row-key="id"
       :columns="columns_destinations"
@@ -67,7 +67,7 @@
 import { useQuasar } from 'quasar';
 import { defineComponent, onMounted, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { Destination } from "src/api/destination/destination";
+import { Destination } from 'src/api/destination/destination';
 
 export default defineComponent({
   name: 'Destinations-page',
