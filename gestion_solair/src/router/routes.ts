@@ -21,6 +21,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/Destinations.vue'),
         name: 'destinations'
       },
+      { 
+        path: 'Create/Destination',
+        component: () => import('pages/Creation/DestinationCreate.vue'),
+        name: 'destination-create'
+      }
     ],
   },
 
