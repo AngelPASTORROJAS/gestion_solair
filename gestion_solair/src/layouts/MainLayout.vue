@@ -50,6 +50,12 @@ import EssentialLink from 'components/EssentialLink.vue';
 
 const linksList = [
   {
+    title: 'Accueil',
+    caption: 'Accueil',
+    icon: 'home',
+    link: '#'
+  },
+  {
     title: 'Critères',
     caption: 'Criteres',
     icon: 'filter_list',
