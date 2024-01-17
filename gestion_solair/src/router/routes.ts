@@ -25,6 +25,11 @@ const routes: RouteRecordRaw[] = [
         path: 'Create/Destination',
         component: () => import('pages/Creation/DestinationCreate.vue'),
         name: 'destination-create'
+      },
+      { 
+        path: 'Create/Critere',
+        component: () => import('pages/CritereCreate.vue'),
+        name: 'critere-create'
       }
     ],
   },
