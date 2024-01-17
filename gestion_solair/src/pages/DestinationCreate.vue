@@ -1,6 +1,6 @@
 <template>
     <q-page class="q-pa-lg">
-        <p class="sub-title">Destinations / Création</p>
+        <p class="sub-title">Destination / Création</p>
         <q-form @submit="onSubmit">
             <div class="row bg-pink-4">
                 <q-list class="col-12" bordered padding>
