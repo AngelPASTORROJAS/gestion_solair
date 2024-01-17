@@ -1,6 +1,6 @@
 <template>
   <q-page class="index-page q-pa-lg">
-    <p>Bienvenue sur l'application de gestion de solair</p>
+    <p class="sub-title">Bienvenue sur l'application de gestion de solair</p>
     <ul class="selections row justify-evenly items-centers">
       <li>
         <q-btn class="bouton-custom" :to="{ name: 'utilisateurs' }">Utilisateurs</q-btn>
@@ -33,8 +33,5 @@ export default defineComponent({
 .bouton-custom {
   background-color: $cta;
   color: white;
-}
-p {
-  font-size: 2rem;
 }
 </style>
