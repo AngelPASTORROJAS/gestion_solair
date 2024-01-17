@@ -24,7 +24,7 @@
             <div class="col q-pl-md">
               <q-input dense rounded standout debounced="250"
                 v-model="filter.utilisateur"
-                label="Filter"
+                label="Filtre"
                 label-color="white"
                 input-style="color: white"
                 bg-color="secondary"
@@ -45,7 +45,7 @@
             <div class="col q-pl-md">
               <q-input dense rounded standout debounced="250"
                 v-model="filter.identifiant"
-                label="Filter"
+                label="Filtre"
                 label-color="white"
                 input-style="color: white"
                 bg-color="secondary"
