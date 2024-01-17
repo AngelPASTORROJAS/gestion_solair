@@ -1,5 +1,5 @@
 <template>
-    <q-page>
+    <q-page class="q-pa-lg">
         <p class="sub-title">Destinations / Création</p>
     </q-page>
 </template>
