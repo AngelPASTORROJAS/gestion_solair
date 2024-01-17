@@ -7,7 +7,7 @@
                     <q-expansion-item default-opened expand-separator label="Informations de la destination">
                         <q-item>
                             <div class="col-12">
-                                <InputCustom max="75" mention="Obligatoire" 
+                                <InputCustom max="255" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"
                                     label="Nom"
                                     v-model="destination.nom"
@@ -18,12 +18,12 @@
                                     v-model="destination.url"
                                 ></InputCustom>
                                 <InputCustom max="255" mention="Obligatoire" 
-                                :rules="[(val) => !!val]"
-                                label="Description"
-                                v-model="destination.description"
-                                ></InputCustom>
-                                <InputCustom max="10" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"
+                                    label="Description"
+                                    v-model="destination.description"
+                                ></InputCustom>
+                                <InputCustom max="255" mention="Obligatoire" 
+                                    :rules="[(val) => !!val]"    
                                     label="Ville"
                                     v-model="destination.ville"
                                 ></InputCustom>
@@ -32,6 +32,14 @@
                     </q-expansion-item>
                 </q-list>
             </div>
+            <ul class="selections row justify-evenly">
+                <li>
+                    <q-btn class="bouton-default2" :to="{ name: 'destinations' }">Précedent</q-btn>
+                </li>
+                <li>
+                    <q-btn class="bouton-default" type="submit" @click="isCheck()">Créer</q-btn>
+                </li>
+            </ul>
         </q-form>
     </q-page>
 </template>
@@ -39,13 +47,51 @@
 <script lang="ts">
 import InputCustom from 'src/components/InputCustom.vue';
 import { defineComponent, ref } from 'vue';
+import { useQuasar } from 'quasar';
 
 export default defineComponent ({
     name: 'Destinations-create',
     setup() {
-        const destination = ref({} as Destination)
+        const $q = useQuasar();
+        const destination = ref({} as Destination);
+
+        const isCheck = () => {
+            if(!destination.value.nom || !destination.value.url || !destination.value.description || !destination.value.ville) {
+                $q.notify({
+                    color: 'red-5',
+                    textColor: 'white',
+                    icon: 'error_outline',
+                    message: 'Vueillez compléter les champs obligatoires',
+                    position: 'top'
+                })
+            }
+        }
+
+        const onSubmit = async () => {
+            var accepted = true // await gestionSolaire.destination.createAsync(destination.value);
+            if (accepted == true) {
+                $q.notify({
+                    color: 'green-4',
+                    textColor: 'white',
+                    icon: 'cloud_done',
+                    message: 'Sauvegarder',
+                    position: 'top'
+                });
+            } else {
+                $q.notify({
+                    color: 'red-5',
+                    textColor: 'white',
+                    icon: 'warning',
+                    message: 'Erreur de sauvegarde',
+                    position: 'top'
+                })
+            }
+        }
+
         return {
             destination,
+            isCheck,
+            onSubmit
         };
     },
 
@@ -54,3 +100,10 @@ export default defineComponent ({
     }
 })
 </script>
+
+<style lang="scss">
+.selections {
+  list-style: none;
+  gap: 15px;
+}
+</style>
