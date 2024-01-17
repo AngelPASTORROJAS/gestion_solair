@@ -11,7 +11,7 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
+        <q-toolbar-title class="text-center">
           <a href="#">Gestion Solair</a>
         </q-toolbar-title>
 
@@ -100,5 +100,6 @@ export default defineComponent({
 a {
   text-decoration: none;
   color: inherit;
+  font-size: 2rem;
 }
 </style>
