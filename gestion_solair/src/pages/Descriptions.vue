@@ -6,6 +6,6 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Description-page'
+  name: 'Descriptions-page'
 })
 </script>
