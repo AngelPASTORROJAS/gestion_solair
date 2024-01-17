@@ -1,5 +1,5 @@
 <template>
-  <q-page class="index-page q-pa-lg">
+  <q-page class="q-pa-lg">
     <p class="sub-title">Bienvenue sur l'application de gestion de solair</p>
     <ul class="selections row justify-evenly items-centers">
       <li>
