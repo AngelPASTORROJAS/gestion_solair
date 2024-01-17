@@ -13,7 +13,7 @@
       no-data-label="Aucune donné n'a pu être trouvé"
       no-results-label="Aucune donné n'a pu être trouvé"
       table-style="max-height: 53em"
-      table-header-class="bg-primary"
+      table-header-class="bg-default"
       table-header-style="position:sticky; z-index:1; top:0; color: white; font-weight:blod"
       dense hide-bottom @row-click="onRowClick"
     >

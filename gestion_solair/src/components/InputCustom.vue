@@ -1,6 +1,6 @@
 <template>
     <div class="row q-pa-xs">
-        <q-field bg-color="primary" class="col-2 label" square outlined stack-label>
+        <q-field bg-color="cyan-7" class="col-2 label" square outlined stack-label>
             <template v-slot:control>
                 <div class="text-white">{{ label }}</div>
             </template>
