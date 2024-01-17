@@ -116,6 +116,7 @@ export default defineComponent({
         $q.loading.hide();
       }
     })
+
     return {
       utilisateurs,
       columns_utilisateurs,
