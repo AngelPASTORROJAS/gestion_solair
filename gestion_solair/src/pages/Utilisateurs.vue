@@ -108,6 +108,7 @@ export default defineComponent({
     onMounted(async () => {
       try {
         $q.loading.show();
+        // TODO: Ici récuperation des données par api
         utilisateurs.value = [{id:1, role:'admin', identifiant:'q',nom:'pastor',prenom:'robert', mail:'ds'}, {id:2, role:'', identifiant:'kikoui',nom:'rojas',prenom:'gabrielle', mail:'ds'}] as Utilisateur[];
       } catch(e) {
         console.log(e);
