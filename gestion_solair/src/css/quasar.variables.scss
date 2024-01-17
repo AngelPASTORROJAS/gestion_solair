@@ -25,7 +25,16 @@ $info      : #31CCEC;
 $warning   : #F2C037;
 
 $cta       : #E57373;
+$default   : #00ACC1;
 
 .sub-title {
     font-size: 2rem;
 }
+.bouton-cta {
+    background-color: $cta;
+    color: white;
+  }
+.bouton-default {
+    background-color: $default;
+    color: white;
+  }
