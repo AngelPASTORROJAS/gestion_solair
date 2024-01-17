@@ -19,7 +19,7 @@
     >
       <template v-slot:header-cell-utilisateurs="props">
         <q-th :props="props">
-          <div class="row items center">
+          <div class="row items-center">
             <div>{{ props.col.label }}</div>
             <div class="col q-pl-md">
               <q-input dense rounded standout debounced="250"
@@ -40,7 +40,7 @@
       </template>
       <template v-slot:header-cell-identifiant="props">
         <q-th :props="props">
-          <div class="row items center">
+          <div class="row items-center">
             <div>{{ props.col.label }}</div>
             <div class="col q-pl-md">
               <q-input dense rounded standout debounced="250"
