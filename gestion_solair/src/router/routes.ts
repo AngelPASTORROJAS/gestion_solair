@@ -23,7 +23,7 @@ const routes: RouteRecordRaw[] = [
       },
       { 
         path: 'Create/Destination',
-        component: () => import('pages/Creation/DestinationCreate.vue'),
+        component: () => import('pages/DestinationCreate.vue'),
         name: 'destination-create'
       },
       { 

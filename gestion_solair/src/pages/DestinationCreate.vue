@@ -48,6 +48,7 @@
 import InputCustom from 'src/components/InputCustom.vue';
 import { defineComponent, ref } from 'vue';
 import { useQuasar } from 'quasar';
+import { Destination } from 'src/api/destination/destination';
 
 export default defineComponent ({
     name: 'Destinations-create',
