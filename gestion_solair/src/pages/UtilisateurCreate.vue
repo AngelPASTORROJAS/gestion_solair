@@ -4,7 +4,7 @@
         <q-form @submit="onSubmit">
             <div class="row bg-pink-4">
                 <q-list class="col-12" bordered padding>
-                    <q-expansion-item default-opened expand-separator label="Informations de la destination">
+                    <q-expansion-item default-opened expand-separator label="Informations de l'utilisateur">
                         <q-item>
                             <div class="col-12">
                                 <InputCustom max="255" mention="Obligatoire" 
