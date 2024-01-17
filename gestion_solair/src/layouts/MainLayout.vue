@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Gestion Solair
+          <a href="#">Gestion Solair</a>
         </q-toolbar-title>
 
       </q-toolbar>
@@ -95,3 +95,10 @@ export default defineComponent({
   }
 });
 </script>
+
+<style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+</style>
