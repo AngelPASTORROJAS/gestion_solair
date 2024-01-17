@@ -6,3 +6,7 @@ export interface Utilisateur {
     mail: string;
     role: string;
 }
+
+export interface UtilisateurExtend extends Utilisateur {
+    password: string;
+}
