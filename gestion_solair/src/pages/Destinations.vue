@@ -27,7 +27,7 @@
                 label="Filtre"
                 label-color="white"
                 input-style="color: white"
-                bg-color="secondary"
+                bg-color="pink-4"
               >
                 <template v-slot:prepend>
                   <q-icon v-if="!filter.nom" name="search" color="white"></q-icon>
@@ -48,7 +48,7 @@
                 label="Filtre"
                 label-color="white"
                 input-style="color: white"
-                bg-color="secondary"
+                bg-color="pink-4"
               >
                 <template v-slot:prepend>
                   <q-icon v-if="!filter.ville" name="search" color="white"></q-icon>
