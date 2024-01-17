@@ -38,27 +38,6 @@
           </div>
         </q-th>
       </template>
-      <template v-slot:header-cell-ville="props">
-        <q-th :props="props">
-          <div class="row items-center">
-            <div>{{ props.col.label }}</div>
-            <div class="col q-pl-md">
-              <q-input dense rounded standout debounced="250"
-                v-model="filter.ville"
-                label="Filtre"
-                label-color="white"
-                input-style="color: white"
-                bg-color="pink-4"
-              >
-                <template v-slot:prepend>
-                  <q-icon v-if="!filter.ville" name="search" color="white"></q-icon>
-                  <q-icon v-else name="close" color="white" @click="filter.ville=''" class="cursor-pointer"></q-icon>
-                </template>
-              </q-input>
-            </div>
-          </div>
-        </q-th>
-      </template>
     </q-table>
   </q-page>
 </template>
@@ -74,16 +53,12 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     const $q = useQuasar();
-    const filter = reactive({ nom:'', ville:'' });
+    const filter = reactive({ nom:'' });
     const destinations = ref([] as Destination[]);
     const columns_destinations = [
       {
         name: 'destinations', label: 'Destinations', align: 'left',
         field: (result: Destination) => result.nom ?? ''
-      },
-      {
-        name: 'ville', label: 'Ville', align: 'left',
-        field: (result: Destination) => result.ville
       }
     ];
 
@@ -94,8 +69,7 @@ export default defineComponent({
 
     const method_filter = () => {
       return destinations.value.filter(destination =>
-        (!filter.nom || isIncludes(destination.nom, filter.nom)) &&
-        (!filter.ville || isIncludes(destination.ville, filter.ville))
+        (!filter.nom || isIncludes(destination.nom, filter.nom))
       );
     }
 
@@ -109,7 +83,7 @@ export default defineComponent({
       try {
         $q.loading.show();
         // TODO: Ici récuperation des données par api
-        destinations.value = [{id:1, nom:'Pas-de-callais', ville:'62000'}, {id:2, nom:'Lille', ville:'59000'}] as Destination[];
+        destinations.value = [{id:1, nom:'Pas-de-calais'}, {id:2, nom:'Lille'}] as Destination[];
       } catch(e) {
         console.log(e);
       } finally {

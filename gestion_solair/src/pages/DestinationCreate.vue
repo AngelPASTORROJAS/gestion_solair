@@ -24,8 +24,13 @@
                                 ></InputCustom>
                                 <InputCustom max="255" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"    
-                                    label="Ville"
-                                    v-model="destination.ville"
+                                    label="Titre"
+                                    v-model="destination.titre"
+                                ></InputCustom>
+                                <InputCustom mention="Obligatoire" 
+                                    :rules="[(val) => !!val]"    
+                                    label="Article"
+                                    v-model="destination.article"
                                 ></InputCustom>
                             </div>
                         </q-item>
@@ -57,7 +62,7 @@ export default defineComponent ({
         const destination = ref({} as Destination);
 
         const isCheck = () => {
-            if(!destination.value.nom || !destination.value.url || !destination.value.description || !destination.value.ville) {
+            if(!destination.value.nom || !destination.value.url || !destination.value.description || !destination.value.titre || !destination.value.article) {
                 $q.notify({
                     color: 'red-5',
                     textColor: 'white',

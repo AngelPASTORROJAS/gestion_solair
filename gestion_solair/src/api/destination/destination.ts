@@ -3,5 +3,6 @@ export interface Destination {
     nom: string;
     description: string;
     url: string;
-    ville: string;
+    titre: string;
+    article: string;
 }
