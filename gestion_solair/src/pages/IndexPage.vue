@@ -29,7 +29,6 @@ export default defineComponent({
   list-style: none;
   gap: 15px;
 }
-
 .bouton-custom {
   background-color: $cta;
   color: white;
