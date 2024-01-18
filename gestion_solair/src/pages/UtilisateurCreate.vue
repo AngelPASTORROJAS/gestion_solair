@@ -10,7 +10,7 @@
                                 <InputCustom max="255" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"
                                     label="Identifiant"
-                                    v-model="utilisateur.identifiant"
+                                    v-model="utilisateur.login"
                                 ></InputCustom>
                                 <InputCustom max="255" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"
@@ -67,7 +67,7 @@ export default defineComponent ({
         const utilisateur = ref({} as UtilisateurExtend);
 
         const isCheck = () => {
-            if(!utilisateur.value.identifiant || !utilisateur.value.nom || !utilisateur.value.prenom || !utilisateur.value.mail || !utilisateur.value.password || !utilisateur.value.role) {
+            if(!utilisateur.value.login || !utilisateur.value.nom || !utilisateur.value.prenom || !utilisateur.value.mail || !utilisateur.value.password || !utilisateur.value.role) {
                 $q.notify({
                     color: 'red-5',
                     textColor: 'white',

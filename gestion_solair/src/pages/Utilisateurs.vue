@@ -44,15 +44,15 @@
             <div>{{ props.col.label }}</div>
             <div class="col q-pl-md">
               <q-input dense rounded standout debounced="250"
-                v-model="filter.identifiant"
+                v-model="filter.login"
                 label="Filtre"
                 label-color="white"
                 input-style="color: white"
                 bg-color="pink-4"
               >
                 <template v-slot:prepend>
-                  <q-icon v-if="!filter.identifiant" name="search" color="white"></q-icon>
-                  <q-icon v-else name="close" color="white" @click="filter.identifiant=''" class="cursor-pointer"></q-icon>
+                  <q-icon v-if="!filter.login" name="search" color="white"></q-icon>
+                  <q-icon v-else name="close" color="white" @click="filter.login=''" class="cursor-pointer"></q-icon>
                 </template>
               </q-input>
             </div>
@@ -74,7 +74,7 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     const $q = useQuasar();
-    const filter = reactive({ utilisateur:'', identifiant:'' });
+    const filter = reactive({ utilisateur:'', login:'' });
     const utilisateurs = ref([] as Utilisateur[]);
     const columns_utilisateurs = [
       {
@@ -83,7 +83,7 @@ export default defineComponent({
       },
       {
         name: 'identifiant', label: 'Identifiant', align: 'left',
-        field: (result: Utilisateur) => result.identifiant
+        field: (result: Utilisateur) => result.login
       }
     ];
 
@@ -94,7 +94,7 @@ export default defineComponent({
 
     const method_filter = () => {
       return utilisateurs.value.filter(utilisateur =>
-        (!filter.identifiant || isIncludes(utilisateur.identifiant, filter.identifiant)) &&
+        (!filter.login || isIncludes(utilisateur.login, filter.login)) &&
         (!filter.utilisateur || isIncludes((utilisateur.nom??'')+(utilisateur.prenom??''), filter.utilisateur))
       );
     }
@@ -109,7 +109,7 @@ export default defineComponent({
       try {
         $q.loading.show();
         // TODO: Ici récuperation des données par api
-        utilisateurs.value = [{id:1, role:'admin', identifiant:'q',nom:'pastor',prenom:'robert', mail:'ds'}, {id:2, role:'', identifiant:'kikoui',nom:'rojas',prenom:'gabrielle', mail:'ds'}] as Utilisateur[];
+        utilisateurs.value = [{id:1, role:'admin', login:'q',nom:'pastor',prenom:'robert', mail:'ds'}, {id:2, role:'', login:'kikoui',nom:'rojas',prenom:'gabrielle', mail:'ds'}] as Utilisateur[];
       } catch(e) {
         console.log(e);
       } finally {
