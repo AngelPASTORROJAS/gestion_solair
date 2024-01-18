@@ -12,12 +12,12 @@
                                     label="Identifiant"
                                     v-model="utilisateur.login"
                                 ></InputCustom>
-                                <InputCustom max="255" 
+                                <InputCustom max="255" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"
                                     label="Nom"
                                     v-model="utilisateur.nom"
                                 ></InputCustom>
-                                <InputCustom max="255" 
+                                <InputCustom max="255" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"
                                     label="Prénom"
                                     v-model="utilisateur.prenom"
@@ -32,7 +32,7 @@
                                     label="Mot de passe"
                                     v-model="utilisateur.mot_de_passe"
                                 ></InputCustom>
-                                <InputCustom max="50"
+                                <InputCustom max="50" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"    
                                     label="Rôle"
                                     v-model="utilisateur.role"
