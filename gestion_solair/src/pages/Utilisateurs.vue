@@ -109,7 +109,7 @@ export default defineComponent({
       try {
         $q.loading.show();
         // TODO: Ici récuperation des données par api
-        utilisateurs.value = [{id:1, role:'admin', login:'q',nom:'pastor',prenom:'robert', mail:'ds'}, {id:2, role:'', login:'kikoui',nom:'rojas',prenom:'gabrielle', mail:'ds'}] as Utilisateur[];
+        utilisateurs.value = [{id:1, login:'q',nom:'pastor',prenom:'robert'}, {id:2, login:'kikoui',nom:'rojas',prenom:'gabrielle'}] as Utilisateur[];
       } catch(e) {
         console.log(e);
       } finally {
