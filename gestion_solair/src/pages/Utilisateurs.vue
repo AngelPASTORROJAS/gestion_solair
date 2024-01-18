@@ -91,25 +91,23 @@ export default defineComponent({
       return source.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase()
         .includes(element.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase());
     }
-
     const method_filter = () => {
       return utilisateurs.value.filter(utilisateur =>
         (!filter.login || isIncludes(utilisateur.login, filter.login)) &&
         (!filter.utilisateur || isIncludes((utilisateur.nom??'')+(utilisateur.prenom??''), filter.utilisateur))
       );
     }
-
     const onRowClick = (evt: object, row: object) => {
       const utilisateurOnClick = row as Utilisateur;
       const reference = { name: 'utilisateur-edition', params: { id: utilisateurOnClick.id}};
       router.push(reference);
     }
-
     onMounted(async () => {
       try {
         $q.loading.show();
         // TODO: Ici récuperation des données par api
-        utilisateurs.value = [{id:1, login:'q',nom:'pastor',prenom:'robert'}, {id:2, login:'kikoui',nom:'rojas',prenom:'gabrielle'}] as Utilisateur[];
+        // utilisateur.value = await gestionSolair.utilisateur.getUtilisateurAsync();
+        utilisateurs.value = [{id:1, login:'Rocky',nom:'GALLAIRD',prenom:'Marco'}, {id:2, login:'Kookie',nom:'BONHOMME',prenom:'Frédérique'}] as Utilisateur[];
       } catch(e) {
         console.log(e);
       } finally {
