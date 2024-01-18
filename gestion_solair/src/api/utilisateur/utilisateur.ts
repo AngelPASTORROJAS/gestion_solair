@@ -8,5 +8,5 @@ export interface Utilisateur {
 }
 
 export interface UtilisateurExtend extends Utilisateur {
-    password: string;
+    mot_de_passe: string;
 }

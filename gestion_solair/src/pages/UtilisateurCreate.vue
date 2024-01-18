@@ -7,7 +7,7 @@
                     <q-expansion-item default-opened expand-separator label="Informations de l'utilisateur">
                         <q-item>
                             <div class="col-12">
-                                <InputCustom max="255" mention="Obligatoire" 
+                                <InputCustom max="50" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"
                                     label="Identifiant"
                                     v-model="utilisateur.login"
@@ -22,15 +22,15 @@
                                     label="Prénom"
                                     v-model="utilisateur.prenom"
                                 ></InputCustom>
-                                <InputCustom max="255" mention="Obligatoire" 
+                                <InputCustom max="256" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"    
                                     label="Mail"
                                     v-model="utilisateur.email"
                                 ></InputCustom>
-                                <InputCustom max="255" mention="Obligatoire" 
+                                <InputCustom max="60" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"
                                     label="Mot de passe"
-                                    v-model="utilisateur.password"
+                                    v-model="utilisateur.mot_de_passe"
                                 ></InputCustom>
                                 <InputCustom max="255" mention="Obligatoire" 
                                     :rules="[(val) => !!val]"    
@@ -67,7 +67,7 @@ export default defineComponent ({
         const utilisateur = ref({} as UtilisateurExtend);
 
         const isCheck = () => {
-            if(!utilisateur.value.login || !utilisateur.value.nom || !utilisateur.value.prenom || !utilisateur.value.email || !utilisateur.value.password || !utilisateur.value.role) {
+            if(!utilisateur.value.login || !utilisateur.value.nom || !utilisateur.value.prenom || !utilisateur.value.email || !utilisateur.value.mot_de_passe || !utilisateur.value.role) {
                 $q.notify({
                     color: 'red-5',
                     textColor: 'white',
